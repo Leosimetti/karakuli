@@ -7,7 +7,6 @@ This is a FEWD course project. The main idea is to create an SRS-based Japanese 
 - Prettier
 - Pre-commit hooks for linter (Husky)
 - Jest
-- One of the following:
 - Webpack + webpack-devserver + Babel
 
 ## Techologies used

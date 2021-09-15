@@ -1,0 +1,42 @@
+# compiled output
+**/dist
+**/coverage
+**/out-tsc
+
+.eslintcache
+*.log
+tmp
+
+# dependencies
+**/node_modules
+
+# IDEs and editors
+**/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+**/.vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
+
+# Yarn 2 build artifacts
+# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Extra files for reference
+src/stories/examples

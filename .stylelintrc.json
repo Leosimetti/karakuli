@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "ignoreFiles": ["coverage/**", "node_modules/**", "dist/**", "public/**"],
+  "rules": {
+    "no-descending-specificity": null,
+    "no-empty-source": null,
+    "selector-pseudo-class-no-unknown": null
+  }
+}
