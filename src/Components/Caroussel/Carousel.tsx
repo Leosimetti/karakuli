@@ -1,13 +1,16 @@
 import React from 'react'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import Slider from 'infinite-react-carousel'
 import styled from 'styled-components'
 
 const Carousel = styled(Slider)`
   width: 75%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  
+  flex-shrink: 1;
+  flex-grow: 1;
+  //background-color: rgba(0, 0, 0, 0.2);
+
   img {
     height: 200px;
     width: 300px;
@@ -16,9 +19,7 @@ const Carousel = styled(Slider)`
   .carousel-dots {
     margin: 0;
   }
-  
-}
-  
+
   //background-repeat: no-repeat;
   //background-color: black;
   //background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/75/%D0%9A%D0%B0%D1%80%D1%83%D1%81%D0%B5%D0%BB%D1%8C_%282019%29.png');

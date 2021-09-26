@@ -1,27 +1,29 @@
 import * as React from 'react'
-import { MouseEventHandler } from 'react'
 
 import styled from 'styled-components'
 
 const Button = styled.button`
   background-color: #606060;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  width: 100%;
+
   border: none;
+
   border-radius: 15px;
+  margin: 10px 0;
 
-  width: 80%;
-  height: 100px;
+  font-size: 26px;
+  line-height: 60px;
+  height: 60px;
 
-  font-family: Roboto;
+  font-family: Roboto, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 50px;
-  line-height: 75px;
 
   align-items: center;
   text-align: center;
-
-  color: #ffffff;
+  cursor: pointer;
 
   &:hover,
   &:focus,
@@ -31,13 +33,24 @@ const Button = styled.button`
   &:active {
     color: #303030;
   }
+
+  @media (max-width: 1200px) {
+    font-size: 22px;
+  }
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `
 
 type AuthButtonProps = {
   children: React.ReactNode
-  onClick?: MouseEventHandler
+  onClick?: () => void
 }
 
 export const AuthButton = ({ children, onClick }: AuthButtonProps) => {
-  return <Button onClick={onClick}>{children}</Button>
+  return (
+    <Button type={'submit'} onClick={onClick}>
+      {children}
+    </Button>
+  )
 }

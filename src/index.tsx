@@ -1,9 +1,10 @@
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+
 import 'regenerator-runtime/runtime'
 
-import * as React from 'react';
-import * as ReactDOM from "react-dom";
+import App from './App'
 
-import App from './App';
+const mountNode = document.getElementById('app')
 
-var mountNode = document.getElementById("app");
-ReactDOM.render(<App name="Jane" />, mountNode);
+ReactDOM.render(<App />, mountNode)
