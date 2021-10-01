@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import styled from 'styled-components'
 
@@ -6,8 +7,8 @@ const Button = styled.div<{ leftColor: string; rightColor: string }>`
   display: flex;
   flex-direction: row;
 
-  width: 806px;
-  height: 181px;
+  width: 100%;
+  height: 100%;
   background-color: ${(props) => props.rightColor};
 
   box-sizing: border-box;
@@ -38,10 +39,19 @@ const Text = styled.div`
   text-align: center;
 
   cursor: pointer;
-  color: #ffffff;
 
   span {
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
+    }
+
+    text-decoration: none;
     margin: 20px;
+    color: #ffffff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
 `
@@ -68,12 +78,22 @@ interface Props {
   text: string
   leftColor: string
   rightColor: string
+  url: string
 }
 
-export const DashboardMainButton = ({ className, text, amount, leftColor, rightColor }: Props) => {
+export const DashboardMainButton = ({
+  className,
+  text,
+  amount,
+  leftColor,
+  rightColor,
+  url,
+}: Props) => {
+  const history = useHistory()
+
   return (
     <Button className={className} leftColor={leftColor} rightColor={rightColor}>
-      <Text>
+      <Text onClick={() => history.push(url)}>
         <span>{text}</span>
       </Text>
       <Content>

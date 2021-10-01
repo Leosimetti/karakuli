@@ -1,3 +1,6 @@
+import { URLmap } from '../../Data/const/API_URLS'
+import { actions } from '../../Data/Slices/userdata'
+
 export type registerData = {
   email?: string
   username: string
@@ -5,24 +8,39 @@ export type registerData = {
   passwordConfirm?: string
 }
 
-const URLmap = {
-  login: 'https://karakuli-backend.herokuapp.com/api/v1/auth/jwt/login',
-  register: 'https://karakuli-backend.herokuapp.com/api/v1/auth/register',
-}
+export const submitHandle =
+  (data: registerData, mode: 'login' | 'register') => async (dispatch: any) => {
+    const requestBody = getRequestBody(data, mode)
+    const authResponse = await fetch(URLmap[mode], {
+      method: 'POST',
+      mode: 'cors',
+      body: requestBody,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    })
+    const authResponseJSON = await authResponse.json()
 
-export async function submitHandle(data: registerData, mode: 'login' | 'register') {
-  // console.log(data)
-  const requestBody = getRequestBody(data, mode)
-  const response = await fetch(URLmap[mode], {
-    method: 'POST',
-    mode: 'cors',
-    body: requestBody,
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  })
-  const string = await response.text()
+    console.log(authResponseJSON)
 
-  console.log(JSON.parse(string))
-}
+    if (mode === 'login') {
+      dispatch(
+        actions.setToken({
+          accessToken: authResponseJSON.access_token,
+          refreshToken: authResponseJSON.refresh_token,
+        })
+      )
+      const response = await fetch(URLmap.currentUser, {
+        method: 'GET',
+        mode: 'cors',
+        headers: new Headers({
+          Authorization: `Bearer ${authResponseJSON.access_token}`,
+        }),
+      })
+      const responseJSON = await response.json()
+
+      dispatch(actions.setUsername({ username: responseJSON.username }))
+      dispatch(actions.setCurrentList({ listID: responseJSON.current_list_id }))
+    }
+  }
 
 function getRequestBody(data: registerData, mode: 'login' | 'register') {
   if (mode === 'login') {

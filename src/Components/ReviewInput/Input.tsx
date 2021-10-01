@@ -17,6 +17,8 @@ const WanakanaInput = styled(WanakanaInput_)`
   width: 900px;
   height: 65px;
   box-sizing: border-box;
+  background-color: #606060;
+  color: #cdcdcd;
 
   border: none;
   outline: none;
@@ -28,7 +30,7 @@ const WanakanaInput = styled(WanakanaInput_)`
   line-height: 25px;
 
   &::placeholder {
-    color: var(--pink-pink);
+    color: #9b9b9b;
   }
 `
 // background-color: ${(p) => colors[p.status] || p.theme.educational.background};

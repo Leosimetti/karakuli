@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
+import { useDispatch } from 'react-redux'
 
 import { AuthButton } from '../../Components/Button/AuthButton'
 import { AuthNavButton } from '../../Components/Button/AuthNavButton'
@@ -63,7 +64,7 @@ const Column = styled.div<{ bgColor?: string; width: number }>`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  box-shadow: 15px 15px 10px rgba(245, 90, 90, 0.8);
+  box-shadow: 15px 15px 10px rgba(169, 86, 86, 0.8);
 
   aspect-ratio: 600/900;
   height: 100%;
@@ -161,9 +162,11 @@ export const AuthPage = () => {
     shouldUseNativeValidation: false,
     delayError: undefined,
   })
+  const dispatch = useDispatch()
 
   async function onSubmit(data: registerData) {
-    await submitHandle(data, currentForm)
+    // console.log(data)
+    dispatch(submitHandle(data, currentForm))
   }
 
   return (

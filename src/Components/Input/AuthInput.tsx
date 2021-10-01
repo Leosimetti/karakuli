@@ -149,9 +149,9 @@ export const AuthTextInput = ({
   registerName,
   validate = {
     minLength: (value: string) =>
-      value.length > 5 ? true : 'Поле должно содержать более 4 символов',
+      value.length > 4 ? true : 'Поле должно содержать более 4 символов',
     maxLength: (value: string) =>
-      value.length < 25 ? true : 'Поле должно содержать менее 26 символов',
+      value.length < 25 ? true : 'Поле должно содержать менее 25 символов',
   },
 }: AuthTextInputProps) => {
   const [isFocused, setIsFocused] = useState(false)

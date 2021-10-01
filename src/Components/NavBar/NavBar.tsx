@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { URLs } from '../../Routing/urls'
 import { Logo } from '../Logo/Logo'
 
 import { UserMenu } from './UserMenu'
@@ -12,6 +13,8 @@ const Header = styled.header`
   justify-content: space-between;
   width: 100%;
 
+  background-color: white;
+
   a {
     text-decoration: none;
   }
@@ -22,7 +25,6 @@ const Right = styled.div`
   justify-content: flex-end;
   flex-grow: 1;
 
-  background-color: white;
   font-size: 30px;
 
   a {
@@ -36,13 +38,13 @@ const Right = styled.div`
 export const NavBar = () => {
   return (
     <Header>
-      <Link to="dashboard">
+      <Link to={URLs.dashboard}>
         <Logo size="small" />
       </Link>
       <Right>
-        <Link to="dashboard">Практика</Link>
-        <Link to="dashboard">Уроки</Link>
-        <Link to="dashboard">Настройки</Link>
+        <Link to={URLs.studyLists}>Каталог</Link>
+        <Link to={URLs.review}>Практика</Link>
+        <Link to={URLs.lessons}>Уроки</Link>
         <UserMenu />
       </Right>
     </Header>

@@ -28,37 +28,34 @@ const Char = styled.div`
 `
 // color: ${(p) => p.theme.educational.char || p.theme.educational.color};
 
-const QuestionType = styled.div`
-  grid-row-start: 3;
-
-  text-align: center;
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: var(--pink-black);
-`
+// const QuestionType = styled.div`
+//   grid-row-start: 3;
+//
+//   text-align: center;
+//
+//   font-family: Roboto, sans-serif;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 24px;
+//   line-height: 28px;
+//   color: var(--pink-black);
+// `
 
 const CharacterDisplay = ({ className, review }) => {
   if (!review) {
     review = {
-      word: {
-        id: -1,
-        kanji: '',
-        readings: '',
-        meaning: '',
-        example: '',
-      },
-      type: '',
+      id: -1,
+      radical: '',
+      strokes: '',
+      meaning: '',
+      example: '',
     }
   }
 
   return (
     <Display className={className}>
-      <Char>{review.word.kanji}</Char>
-      <QuestionType>{review.type}</QuestionType>
+      <Char>{review.radical}</Char>
+      {/*<QuestionType>{review.type}</QuestionType>*/}
     </Display>
   )
 }
