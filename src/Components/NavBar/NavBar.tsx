@@ -24,8 +24,10 @@ const Right = styled.div`
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
+  flex-shrink: 1;
 
   font-size: 30px;
+  line-height: 30px;
 
   a {
     text-decoration: none;
@@ -33,13 +35,23 @@ const Right = styled.div`
     margin-top: 10px;
     margin-right: 40px;
   }
+  @media (max-width: 800px) {
+    font-size: 24px;
+  }
+`
+const LogoWrapper = styled.div`
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 
 export const NavBar = () => {
   return (
     <Header>
       <Link to={URLs.dashboard}>
-        <Logo size="small" />
+        <LogoWrapper>
+          <Logo size="small" />
+        </LogoWrapper>
       </Link>
       <Right>
         <Link to={URLs.studyLists}>Каталог</Link>

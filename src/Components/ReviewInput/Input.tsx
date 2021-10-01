@@ -9,12 +9,12 @@ const colors = {
 }
 
 const InputWrapper = styled.div`
-  width: 900px;
+  //width: 900px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 `
 
 const WanakanaInput = styled(WanakanaInput_)`
-  width: 900px;
+  width: 800px;
   height: 65px;
   box-sizing: border-box;
   background-color: #606060;
@@ -31,6 +31,14 @@ const WanakanaInput = styled(WanakanaInput_)`
 
   &::placeholder {
     color: #9b9b9b;
+  }
+
+  @media (max-width: 1200px) {
+    width: 600px;
+  }
+
+  @media (max-width: 768px) {
+    width: 300px;
   }
 `
 // background-color: ${(p) => colors[p.status] || p.theme.educational.background};

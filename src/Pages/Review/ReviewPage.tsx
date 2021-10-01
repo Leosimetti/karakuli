@@ -22,6 +22,7 @@ const Input = styled(Input_)`
 const Wrapper = styled.div`
   height: 100%;
   background-color: #303030;
+  //min-width: 768px;
 `
 const ArrowRight = styled.span`
   display: flex;
@@ -30,8 +31,11 @@ const ArrowRight = styled.span`
   color: #f18c9c;
   user-select: none;
   cursor: pointer;
-  font-size: 69px;
+  font-size: 50px;
   margin: 50px;
+  @media (max-width: 800px) {
+    margin: 35px;
+  } ;
 `
 
 const ArrowLeft = styled(ArrowRight)`
@@ -46,23 +50,14 @@ const Flex = styled.div`
 export default function ReviewPage() {
   const userToken = useSelector(selectors.accessToken)
 
-  const review = {
-    word: {
-      id: -1,
-      kanji: '🍆',
-      readings: 'BU-BA',
-      meaning: 'BEBRA',
-      example: 'OH YEAH',
-    },
-  }
-
   const [reviews, setReviews] = useState([])
   const [position, setPosition] = useState(0)
 
   useEffect(() => {
-    getReviews(userToken).then((data) => {
-      setReviews(data)
-    })
+    userToken &&
+      getReviews(userToken).then((data) => {
+        setReviews(data)
+      })
   }, [getReviews])
 
   return (
@@ -75,7 +70,7 @@ export default function ReviewPage() {
           <Input callback={alert} status={null} maxLength={20} />
         </div>
         <ArrowRight
-          onClick={() => setPosition(position < reviews.length ? position + 1 : position)}
+          onClick={() => setPosition(position < reviews.length - 1 ? position + 1 : position)}
         >
           ➤
         </ArrowRight>

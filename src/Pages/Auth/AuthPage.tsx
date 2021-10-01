@@ -7,8 +7,8 @@ import { AuthNavButton } from '../../Components/Button/AuthNavButton'
 import { FeatureCarousel } from '../../Components/Caroussel/Carousel'
 import { AuthTextInput } from '../../Components/Input/AuthInput'
 import { Logo } from '../../Components/Logo/Logo'
+import { registerData, submitHandle } from '../../Data/api/actioncreators/register'
 
-import { registerData, submitHandle } from './Auth.utils'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import url from './layered-waves-haikei (1).svg'
@@ -132,7 +132,7 @@ const Blur = styled.div<{ align: string }>`
   border-radius: 10px;
   text-align: ${(props) => props.align};
 
-  margin: 1% 0;
+  //margin: 1% 0;
   padding: 15px 7px;
 `
 

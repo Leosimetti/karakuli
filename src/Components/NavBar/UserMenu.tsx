@@ -7,9 +7,13 @@ import styled from 'styled-components'
 
 const Name = styled.div`
   font-size: 40px;
-  white-space: nowrap;
-  display: flex;
+  line-height: normal;
+  //white-space: nowrap;
+  //display: flex;
   padding-right: 20px;
+  //@media (max-width: 800px) {
+  //  font-size: 24px;
+  //} ;
 `
 
 export const UserMenu = () => {

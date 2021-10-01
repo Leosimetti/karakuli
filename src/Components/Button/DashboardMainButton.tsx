@@ -97,7 +97,7 @@ export const DashboardMainButton = ({
         <span>{text}</span>
       </Text>
       <Content>
-        <span>Доступно уроков</span>
+        <span>Доступно</span>
         <span>
           <b>{amount}</b>
         </span>

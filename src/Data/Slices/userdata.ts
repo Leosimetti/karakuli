@@ -5,18 +5,28 @@ type userdataState = {
   refreshToken?: string
   username?: string
   listID?: number
+  loading: boolean
+  error?: string
 }
 const initialState: userdataState = {
   accessToken: undefined,
   refreshToken: undefined,
   username: undefined,
   listID: undefined,
+  loading: false,
+  error: undefined,
 }
 
 const userdataSlice = createSlice({
   name: 'userdata',
   initialState,
   reducers: {
+    startLoading: (state) => {
+      state.loading = true
+    },
+    endLoading: (state) => {
+      state.loading = false
+    },
     setToken: (
       state,
       { payload }: PayloadAction<{ accessToken: string; refreshToken: string }>
@@ -30,6 +40,13 @@ const userdataSlice = createSlice({
     setCurrentList: (state, { payload }: PayloadAction<{ listID: number }>) => {
       state.listID = payload.listID
     },
+    reset: (_state) => initialState,
+    setError: (state, { payload }: PayloadAction<{ error: string }>) => {
+      state.error = payload.error
+    },
+    clearError: (state) => {
+      state.error = undefined
+    },
   },
 })
 
@@ -39,6 +56,7 @@ const loginSelectors = {
   accessToken: createSelector(rootRegisterSelector, (state) => state.accessToken),
   refreshToken: createSelector(rootRegisterSelector, (state) => state.refreshToken),
   listID: createSelector(rootRegisterSelector, (state) => state.listID),
+  isLoading: createSelector(rootRegisterSelector, (state) => state.loading),
 }
 
 export const actions = userdataSlice.actions

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { StudyListCard } from '../../Components/Card/StudyListCard'
 import { NavBar } from '../../Components/NavBar/NavBar'
+import { chooseList } from '../../Data/api/actioncreators/chooseList'
+import { selectors } from '../../Data/Slices/userdata'
+import { URLs } from '../../Routing/urls'
 
 import { getLists, studyList } from './StudyLists.utils'
 
@@ -32,7 +37,10 @@ const CardsContainer = styled.div`
 `
 
 export const StudyLists = () => {
+  const userToken = useSelector(selectors.accessToken)
   const [lists, setLists] = useState<studyList[]>([])
+  const history = useHistory()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     getLists().then((data) => setLists(data))
@@ -42,15 +50,16 @@ export const StudyLists = () => {
     <MainPage>
       <NavBar />
       <CardsContainer>
-        {lists.map(({ description, id, name }: studyList) => (
+        {lists.map(({ description, id, name, img_url }: studyList) => (
           <CardWrapper key={id}>
             <StudyListCard
               title={name}
-              pictureLink={
-                'https://lh3.googleusercontent.com/proxy/TuyWP_h4w3SW2Satf3Q_9ay7i1xI9emvLKwd2D9up6-noNFknZKVek13cNsPNF6hhPYJ0c7sZNU2lOjhYYln3doPa9NyqkTLlyP1Zti0Trs35SQlPgDQ1qdN'
-              }
+              pictureLink={img_url}
               description={description}
               id={id}
+              onClick={() => {
+                userToken && dispatch(chooseList(id, userToken, () => history.push(URLs.dashboard)))
+              }}
             />
           </CardWrapper>
         ))}

@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Display = styled.div`
-  width: 900px;
+  //width: 900px;
   height: 300px;
 
   display: grid;
@@ -28,34 +28,40 @@ const Char = styled.div`
 `
 // color: ${(p) => p.theme.educational.char || p.theme.educational.color};
 
-// const QuestionType = styled.div`
-//   grid-row-start: 3;
-//
-//   text-align: center;
-//
-//   font-family: Roboto, sans-serif;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 24px;
-//   line-height: 28px;
-//   color: var(--pink-black);
-// `
+const QuestionType = styled.div`
+  grid-row-start: 3;
+  //background-color: rgb(0, 0, 0, 0.7);
+  color: darkgrey;
+  text-align: center;
 
-const CharacterDisplay = ({ className, review }) => {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+`
+
+type CharacterDisplayProps = {
+  className?: string
+  review: any
+}
+
+const CharacterDisplay = ({ className, review }: CharacterDisplayProps) => {
   if (!review) {
     review = {
       id: -1,
-      radical: '',
-      strokes: '',
+      character: '',
+      reading: '',
       meaning: '',
       example: '',
+      type: 'none',
     }
   }
 
   return (
     <Display className={className}>
-      <Char>{review.radical}</Char>
-      {/*<QuestionType>{review.type}</QuestionType>*/}
+      <QuestionType>{review.type}</QuestionType>
+      <Char>{review.character}</Char>
     </Display>
   )
 }

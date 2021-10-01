@@ -8,6 +8,7 @@ type StudyListCardProps = {
   pictureLink: string
   username?: string
   description: string
+  onClick: () => void
 }
 
 const Card = styled.div`
@@ -87,14 +88,10 @@ export const StudyListCard = ({
   pictureLink,
   username,
   description,
-  id,
+  onClick,
 }: StudyListCardProps) => {
-  function handleClick() {
-    console.log(id)
-  }
-
   return (
-    <Card onClick={() => handleClick()}>
+    <Card onClick={onClick}>
       <div>
         <Picture src={pictureLink} />
         <Blur align={'center'}>
