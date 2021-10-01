@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.button`
   background-color: #606060;
@@ -40,17 +40,15 @@ const Button = styled.button`
   @media (max-width: 768px) {
     font-size: 18px;
   }
-`
+`;
 
 type AuthButtonProps = {
   children: React.ReactNode
   onClick?: () => void
-}
+};
 
-export const AuthButton = ({ children, onClick }: AuthButtonProps) => {
-  return (
-    <Button type={'submit'} onClick={onClick}>
-      {children}
-    </Button>
-  )
-}
+export const AuthButton = ({ children, onClick }: AuthButtonProps) => (
+  <Button type="submit" onClick={onClick}>
+    {children}
+  </Button>
+);

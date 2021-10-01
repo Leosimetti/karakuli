@@ -1,5 +1,5 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { selectors } from '../../Data/Slices/userdata'
 
@@ -14,15 +14,15 @@ const Name = styled.div`
   //@media (max-width: 800px) {
   //  font-size: 24px;
   //} ;
-`
+`;
 
 export const UserMenu = () => {
-  const username = useSelector(selectors.username)
+  const username = useSelector(selectors.username);
 
   return (
     <Name>
       {username || 'Aboba Bebrin'}
-      {/*<button style={{ height: '100%' }}>▼</button>*/}
+      {/* <button style={{ height: '100%' }}>▼</button> */}
     </Name>
-  )
-}
+  );
+};

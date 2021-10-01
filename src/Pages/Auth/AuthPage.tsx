@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { FormProvider, useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+import React, { useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 
 import { AuthButton } from '../../Components/Button/AuthButton'
 import { AuthNavButton } from '../../Components/Button/AuthNavButton'
@@ -57,7 +57,7 @@ const Page = styled.div`
     width: 100vw;
     padding: 0;
   }
-`
+`;
 
 const Column = styled.div<{ bgColor?: string; width: number }>`
   display: flex;
@@ -97,7 +97,7 @@ const Column = styled.div<{ bgColor?: string; width: number }>`
       border-radius: 0;
     }
   }
-`
+`;
 
 const Span = styled.span`
   font-family: Roboto, serif;
@@ -124,7 +124,7 @@ const Span = styled.span`
     font-size: 20px;
     line-height: 20px;
   }
-`
+`;
 
 const Blur = styled.div<{ align: string }>`
   width: 95%;
@@ -134,22 +134,22 @@ const Blur = styled.div<{ align: string }>`
 
   //margin: 1% 0;
   padding: 15px 7px;
-`
+`;
 
 const AuthNav = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5%;
   width: 100%;
-`
+`;
 
 const AuthContainer = styled.div`
   width: 80%;
   margin: 20px 0;
-`
+`;
 
 export const AuthPage = () => {
-  const [currentForm, setCurrentForm] = useState<'login' | 'register'>('login')
+  const [currentForm, setCurrentForm] = useState<'login' | 'register'>('login');
   const methods = useForm({
     mode: 'onSubmit',
     reValidateMode: 'onChange',
@@ -161,12 +161,12 @@ export const AuthPage = () => {
     shouldUnregister: false,
     shouldUseNativeValidation: false,
     delayError: undefined,
-  })
-  const dispatch = useDispatch()
+  });
+  const dispatch = useDispatch();
 
   async function onSubmit(data: registerData) {
     // console.log(data)
-    dispatch(submitHandle(data, currentForm))
+    dispatch(submitHandle(data, currentForm));
   }
 
   return (
@@ -175,7 +175,9 @@ export const AuthPage = () => {
         <Logo size="big" />
         <Blur align="left">
           <Span>
-            <b>Karakuli</b> - платформа для изучения японского языка, применяющая технологию
+            <b>Karakuli</b>
+            {' '}
+            - платформа для изучения японского языка, применяющая технологию
             интервальных повторений для достижения быстрого результата
           </Span>
         </Blur>
@@ -200,50 +202,49 @@ export const AuthPage = () => {
           <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(onSubmit)}>
               <AuthTextInput
-                title={'Почта'}
+                title="Почта"
                 icon={{
                   imageLink:
                     'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/298/envelope_2709-fe0f.png',
                 }}
                 type="email"
-                registerName={'email'}
+                registerName="email"
               />
 
               {currentForm === 'register' && (
                 <AuthTextInput
-                  title={'Логин'}
+                  title="Логин"
                   icon={{
                     imageLink:
                       'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/bust-in-silhouette_1f464.png',
                   }}
-                  registerName={'username'}
+                  registerName="username"
                 />
               )}
               <AuthTextInput
-                title={'Пароль'}
+                title="Пароль"
                 icon={{
                   imageLink:
                     'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/302/locked_1f512.png',
                 }}
                 type="password"
-                registerName={'password'}
+                registerName="password"
               />
 
               {currentForm === 'register' && (
                 <AuthTextInput
-                  title={'Повторите пароль'}
+                  title="Повторите пароль"
                   icon={{
                     imageLink:
                       'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/302/locked_1f512.png',
                   }}
                   type="password"
-                  registerName={'passwordConfirm'}
+                  registerName="passwordConfirm"
                   validate={(input) =>
                     // typescript error with documented utilization of library
                     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                     //  @ts-ignore
-                    input === methods.watch('password') ? true : 'Пароли должны совпадать'
-                  }
+                    (input === methods.watch('password') ? true : 'Пароли должны совпадать')}
                 />
               )}
               <AuthButton>{currentForm === 'register' ? 'Создать аккаунт' : 'Войти'}</AuthButton>
@@ -252,5 +253,5 @@ export const AuthPage = () => {
         </AuthContainer>
       </Column>
     </Page>
-  )
-}
+  );
+};

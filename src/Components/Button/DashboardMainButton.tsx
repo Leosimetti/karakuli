@@ -1,7 +1,7 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.div<{ leftColor: string; rightColor: string }>`
   display: flex;
@@ -28,7 +28,7 @@ const Button = styled.div<{ leftColor: string; rightColor: string }>`
     background-color: ${(props) => props.leftColor};
     border-radius: 40px 0 0 40px;
   }
-`
+`;
 
 const Text = styled.div`
   font-family: Roboto, serif;
@@ -54,7 +54,7 @@ const Text = styled.div`
     color: #ffffff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
-`
+`;
 
 const Content = styled.div`
   display: flex;
@@ -70,7 +70,7 @@ const Content = styled.div`
 
   margin: 20px;
   color: #303030;
-`
+`;
 
 interface Props {
   className?: string
@@ -89,7 +89,7 @@ export const DashboardMainButton = ({
   rightColor,
   url,
 }: Props) => {
-  const history = useHistory()
+  const history = useHistory();
 
   return (
     <Button className={className} leftColor={leftColor} rightColor={rightColor}>
@@ -103,5 +103,5 @@ export const DashboardMainButton = ({
         </span>
       </Content>
     </Button>
-  )
-}
+  );
+};

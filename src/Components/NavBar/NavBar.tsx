@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { URLs } from '../../Routing/urls'
 import { Logo } from '../Logo/Logo'
@@ -18,7 +18,7 @@ const Header = styled.header`
   a {
     text-decoration: none;
   }
-`
+`;
 
 const Right = styled.div`
   display: flex;
@@ -38,27 +38,25 @@ const Right = styled.div`
   @media (max-width: 800px) {
     font-size: 24px;
   }
-`
+`;
 const LogoWrapper = styled.div`
   @media (max-width: 800px) {
     display: none;
   }
-`
+`;
 
-export const NavBar = () => {
-  return (
-    <Header>
-      <Link to={URLs.dashboard}>
-        <LogoWrapper>
-          <Logo size="small" />
-        </LogoWrapper>
-      </Link>
-      <Right>
-        <Link to={URLs.studyLists}>Каталог</Link>
-        <Link to={URLs.review}>Практика</Link>
-        <Link to={URLs.lessons}>Уроки</Link>
-        <UserMenu />
-      </Right>
-    </Header>
-  )
-}
+export const NavBar = () => (
+  <Header>
+    <Link to={URLs.dashboard}>
+      <LogoWrapper>
+        <Logo size="small" />
+      </LogoWrapper>
+    </Link>
+    <Right>
+      <Link to={URLs.studyLists}>Каталог</Link>
+      <Link to={URLs.review}>Практика</Link>
+      <Link to={URLs.lessons}>Уроки</Link>
+      <UserMenu />
+    </Right>
+  </Header>
+);

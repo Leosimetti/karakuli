@@ -28,10 +28,10 @@ const Char = styled.div`
 `
 // color: ${(p) => p.theme.educational.char || p.theme.educational.color};
 
-const QuestionType = styled.div`
+const QuestionType = styled.div<{ q_type: string }>`
   grid-row-start: 3;
   //background-color: rgb(0, 0, 0, 0.7);
-  color: darkgrey;
+  color: ${(props) => (props.q_type === 'meaning' ? 'cadetblue' : 'darkgrey')};
   text-align: center;
 
   font-family: Roboto, sans-serif;
@@ -50,9 +50,9 @@ const CharacterDisplay = ({ className, review }: CharacterDisplayProps) => {
   if (!review) {
     review = {
       id: -1,
-      character: '',
+      character: '🍆',
       reading: '',
-      meaning: '',
+      meaning: 'none',
       example: '',
       type: 'none',
     }
@@ -60,7 +60,7 @@ const CharacterDisplay = ({ className, review }: CharacterDisplayProps) => {
 
   return (
     <Display className={className}>
-      <QuestionType>{review.type}</QuestionType>
+      <QuestionType q_type={review.type}>{review.type}</QuestionType>
       <Char>{review.character}</Char>
     </Display>
   )

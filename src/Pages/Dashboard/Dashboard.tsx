@@ -101,12 +101,12 @@ export const Dashboard = () => {
             url={URLs.review}
           />
         </Row>
-        {/*<Row>*/}
-        {/*<ButtonVert url={URLs.progress} text="Прогресс" />*/}
-        {/*<ButtonVert text="Настройки" />*/}
-        {/*<ButtonVert text="Добавить" />*/}
-        {/*<ButtonVert text="Поиск" />*/}
-        {/*</Row>*/}
+        {/* <Row> */}
+        {/* <ButtonVert url={URLs.progress} text="Прогресс" /> */}
+        {/* <ButtonVert text="Настройки" /> */}
+        {/* <ButtonVert text="Добавить" /> */}
+        {/* <ButtonVert text="Поиск" /> */}
+        {/* </Row> */}
       </MainPage>
     </Wrapper>
   )

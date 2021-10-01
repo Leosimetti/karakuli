@@ -5,4 +5,4 @@ export const URLs = {
   lessons: 'lessons',
   studyLists: '/study-lists',
   progress: '/progress',
-}
+};

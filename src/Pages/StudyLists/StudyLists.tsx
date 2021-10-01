@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { StudyListCard } from '../../Components/Card/StudyListCard'
 import { NavBar } from '../../Components/NavBar/NavBar'
@@ -21,7 +21,7 @@ const MainPage = styled.div`
   height: 100vh; //100%;;
 
   background-color: #303030;
-`
+`;
 
 const CardWrapper = styled.div`
   width: calc(50% - 20px);
@@ -29,28 +29,30 @@ const CardWrapper = styled.div`
   @media (max-width: 800px) {
     width: calc(100% - 20px);
   }
-`
+`;
 
 const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 export const StudyLists = () => {
-  const userToken = useSelector(selectors.accessToken)
-  const [lists, setLists] = useState<studyList[]>([])
-  const history = useHistory()
-  const dispatch = useDispatch()
+  const userToken = useSelector(selectors.accessToken);
+  const [lists, setLists] = useState<studyList[]>([]);
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getLists().then((data) => setLists(data))
-  }, [getLists])
+    getLists().then((data) => setLists(data));
+  }, [getLists]);
 
   return (
     <MainPage>
       <NavBar />
       <CardsContainer>
-        {lists.map(({ description, id, name, img_url }: studyList) => (
+        {lists.map(({
+          description, id, name, img_url,
+        }: studyList) => (
           <CardWrapper key={id}>
             <StudyListCard
               title={name}
@@ -58,12 +60,12 @@ export const StudyLists = () => {
               description={description}
               id={id}
               onClick={() => {
-                userToken && dispatch(chooseList(id, userToken, () => history.push(URLs.dashboard)))
+                userToken && dispatch(chooseList(id, userToken, () => history.push(URLs.dashboard)));
               }}
             />
           </CardWrapper>
         ))}
       </CardsContainer>
     </MainPage>
-  )
-}
+  );
+};

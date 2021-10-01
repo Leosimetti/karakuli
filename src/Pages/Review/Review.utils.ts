@@ -1,4 +1,4 @@
-import { API_URLS } from '../../Data/const/API_URLS'
+import { API_URLS } from '../../Data/const/API_URLS';
 
 export const getReviews = async (userToken: string) => {
   const authResponse = await fetch(API_URLS.reviews, {
@@ -7,7 +7,7 @@ export const getReviews = async (userToken: string) => {
     headers: new Headers({
       Authorization: `Bearer ${userToken}`,
     }),
-  })
+  });
 
-  return await authResponse.json()
-}
+  return authResponse.json();
+};

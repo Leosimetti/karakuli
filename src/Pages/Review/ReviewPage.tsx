@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import CharacterDisplay_ from '../../Components/CharacterDisplay'
 import { NavBar } from '../../Components/NavBar/NavBar'
@@ -13,17 +13,17 @@ import styled from 'styled-components'
 const CharacterDisplay = styled(CharacterDisplay_)`
   background-color: #606060;
   margin: 15px auto auto;
-`
+`;
 
 const Input = styled(Input_)`
   background-color: #606060;
   margin: 15px auto auto;
-`
+`;
 const Wrapper = styled.div`
   height: 100%;
   background-color: #303030;
   //min-width: 768px;
-`
+`;
 const ArrowRight = styled.span`
   display: flex;
 
@@ -36,29 +36,29 @@ const ArrowRight = styled.span`
   @media (max-width: 800px) {
     margin: 35px;
   } ;
-`
+`;
 
 const ArrowLeft = styled(ArrowRight)`
   transform: rotate(180deg);
-`
+`;
 
 const Flex = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 export default function ReviewPage() {
-  const userToken = useSelector(selectors.accessToken)
+  const userToken = useSelector(selectors.accessToken);
 
-  const [reviews, setReviews] = useState([])
-  const [position, setPosition] = useState(0)
+  const [reviews, setReviews] = useState([]);
+  const [position, setPosition] = useState(0);
 
   useEffect(() => {
-    userToken &&
-      getReviews(userToken).then((data) => {
-        setReviews(data)
-      })
-  }, [getReviews])
+    userToken
+      && getReviews(userToken).then((data) => {
+        setReviews(data);
+      });
+  }, [getReviews]);
 
   return (
     <Wrapper>
@@ -76,5 +76,5 @@ export default function ReviewPage() {
         </ArrowRight>
       </Flex>
     </Wrapper>
-  )
+  );
 }

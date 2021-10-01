@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { useFormContext } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useFormContext } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
-import { ErrorMessage } from '@hookform/error-message'
-import styled from 'styled-components'
+import { ErrorMessage } from '@hookform/error-message';
+import styled from 'styled-components';
 
 type AuthTextInputProps = {
   id?: string
@@ -19,18 +19,18 @@ type AuthTextInputProps = {
   type?: 'text' | 'email' | 'password'
   registerName: string
   validate?:
-    | ((value: string) => boolean | string)
-    | {
-        [key: string]: (value: string) => boolean | string
-      }
-}
+  | ((value: string) => boolean | string)
+  | {
+    [key: string]: (value: string) => boolean | string
+  }
+};
 
 const Wrapper = styled.div`
   text-align: left;
   width: 100%;
   margin: 10px 0;
   position: relative;
-`
+`;
 
 const Title = styled.label<{ active: boolean }>`
   position: relative;
@@ -47,13 +47,13 @@ const Title = styled.label<{ active: boolean }>`
   @media (max-height: 800px) {
     font-size: 18px;
   }
-`
+`;
 
 const InputWrapper = styled.div<{ active: boolean }>`
   border-bottom: 6px solid;
   border-color: ${(props) => (props.active ? '#cdcdcd' : '#9b9b9b')};
   display: flex;
-`
+`;
 
 const Input = styled.input<{ error: boolean }>`
   background-color: transparent;
@@ -104,7 +104,7 @@ const Input = styled.input<{ error: boolean }>`
   @media (max-width: 1200px) {
     font-size: 18px;
   }
-`
+`;
 
 const Span = styled.span`
   font-size: 32px;
@@ -113,14 +113,14 @@ const Span = styled.span`
   @media (max-width: 1200px) {
     font-size: 26px;
   }
-`
+`;
 
 const Img = styled.img`
   height: 32px;
   width: 32px;
   margin-bottom: 7px;
   margin-top: 2px;
-`
+`;
 
 const Error = styled.p`
   white-space: pre-wrap;
@@ -138,7 +138,7 @@ const Error = styled.p`
     display: inline;
     content: '⚠ ';
   }
-`
+`;
 
 export const AuthTextInput = ({
   id,
@@ -148,30 +148,28 @@ export const AuthTextInput = ({
   type = 'text',
   registerName,
   validate = {
-    minLength: (value: string) =>
-      value.length > 4 ? true : 'Поле должно содержать более 4 символов',
-    maxLength: (value: string) =>
-      value.length < 25 ? true : 'Поле должно содержать менее 25 символов',
+    minLength: (value: string) => (value.length > 4 ? true : 'Поле должно содержать более 4 символов'),
+    maxLength: (value: string) => (value.length < 25 ? true : 'Поле должно содержать менее 25 символов'),
   },
 }: AuthTextInputProps) => {
-  const [isFocused, setIsFocused] = useState(false)
+  const [isFocused, setIsFocused] = useState(false);
   const {
     register,
     formState: { errors, isSubmitting },
-  } = useFormContext()
+  } = useFormContext();
 
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     // console.log(`${registerName} error:`)
     // console.log(errors[registerName])
 
     if (errors[registerName] !== undefined) {
-      setError(true)
+      setError(true);
     } else {
-      setError(false)
+      setError(false);
     }
-  }, [isSubmitting])
+  }, [isSubmitting]);
 
   const registerProps = {
     ...register(registerName, {
@@ -179,7 +177,7 @@ export const AuthTextInput = ({
       shouldUnregister: true,
       validate,
     }),
-  }
+  };
 
   return (
     <Wrapper>
@@ -188,23 +186,23 @@ export const AuthTextInput = ({
       </Title>
       {link && <Link to={link.href}>{link.text}</Link>}
       <InputWrapper active={isFocused}>
-        {icon &&
-          (icon.imageLink ? <Img src={icon.imageLink} alt={title} /> : <Span>{icon.text}</Span>)}
+        {icon
+          && (icon.imageLink ? <Img src={icon.imageLink} alt={title} /> : <Span>{icon.text}</Span>)}
         <Input
           onFocus={() => setIsFocused(true)}
           type={type}
           id={id || title}
           {...registerProps}
           onBlur={(e) => {
-            registerProps.onBlur(e).then((_) => setIsFocused(false))
+            registerProps.onBlur(e).then((_) => setIsFocused(false));
           }}
           onChange={(e) => {
-            registerProps.onChange(e).then((_) => setError(false))
+            registerProps.onChange(e).then((_) => setError(false));
           }}
           error={error}
         />
       </InputWrapper>
       <ErrorMessage name={registerName} render={({ message }) => <Error>{message}</Error>} />
     </Wrapper>
-  )
-}
+  );
+};

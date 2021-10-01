@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const Button = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
   }
-`
+`;
 
 const Text = styled.div`
   flex-grow: 1;
@@ -56,7 +56,7 @@ const Text = styled.div`
   span {
 
   }
-`
+`;
 
 interface Props {
   className?: string
@@ -64,15 +64,13 @@ interface Props {
   url: string
 }
 
-export const DashboardSecondaryButton = ({ className, text, url }: Props) => {
-  return (
-    <Button className={className}>
-      <Text>
-        <Link to={url}>{text}</Link>
-      </Text>
-      <div>
-        <img src="https://i.pinimg.com/originals/02/c4/1b/02c41bba48a37de34145d0d1af34d40d.png" />
-      </div>
-    </Button>
-  )
-}
+export const DashboardSecondaryButton = ({ className, text, url }: Props) => (
+  <Button className={className}>
+    <Text>
+      <Link to={url}>{text}</Link>
+    </Text>
+    <div>
+      <img src="https://i.pinimg.com/originals/02/c4/1b/02c41bba48a37de34145d0d1af34d40d.png" />
+    </div>
+  </Button>
+);

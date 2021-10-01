@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.button<{ active: boolean }>`
   background-color: ${(props) => (props.active ? '#9B9B9B' : '#444444')};
@@ -39,18 +39,16 @@ const Button = styled.button<{ active: boolean }>`
     font-size: 20px;
     height: 50px;
   }
-`
+`;
 
 type AuthNavButtonProps = {
   children: React.ReactNode
   onClick?: () => void
   active?: boolean
-}
+};
 
-export const AuthNavButton = ({ children, onClick, active = false }: AuthNavButtonProps) => {
-  return (
-    <Button onClick={onClick} active={active}>
-      {children}
-    </Button>
-  )
-}
+export const AuthNavButton = ({ children, onClick, active = false }: AuthNavButtonProps) => (
+  <Button onClick={onClick} active={active}>
+    {children}
+  </Button>
+);

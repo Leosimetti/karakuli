@@ -1,4 +1,4 @@
-const base = 'https://karakuli-backend.herokuapp.com/api/v1'
+const base = 'https://karakuli-backend.herokuapp.com/api/v1';
 
 export const API_URLS = {
   login: `${base}/auth/jwt/login`,
@@ -7,4 +7,4 @@ export const API_URLS = {
   reviews: `${base}/reviews`,
   studyLists: `${base}/lists`,
   dashboard: `${base}/dashboard`,
-}
+};

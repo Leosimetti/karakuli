@@ -1,7 +1,7 @@
-import React from 'react'
-import { hot } from 'react-hot-loader/root'
-import { Provider } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
+import React from 'react';
+import { hot } from 'react-hot-loader/root';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import store from './Data/store'
 import { RoutingSwitch } from './Routing/RoutingSwitch'
@@ -15,17 +15,15 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
   }
-`
+`;
 
-const App = () => {
-  return (
-    <Router>
-      <Provider store={store}>
-        <GlobalStyle />
-        <RoutingSwitch />
-      </Provider>
-    </Router>
-  )
-}
+const App = () => (
+  <Router>
+    <Provider store={store}>
+      <GlobalStyle />
+      <RoutingSwitch />
+    </Provider>
+  </Router>
+);
 
-export default hot(App)
+export default hot(App);
