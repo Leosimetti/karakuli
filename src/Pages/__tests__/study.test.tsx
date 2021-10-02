@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { describe, expect, it } from '@jest/globals'
 import getTestStore from '../../__tests__/testStore'
-import { AuthPage } from '../Auth/AuthPage'
+import { StudyLists } from '../StudyLists/StudyLists'
 
 import { render } from '@testing-library/react'
 
@@ -13,7 +13,7 @@ describe('Auth Page', () => {
     const { container } = render(
       <BrowserRouter>
         <Provider store={getTestStore()}>
-          <AuthPage />
+          <StudyLists />
         </Provider>
       </BrowserRouter>
     )

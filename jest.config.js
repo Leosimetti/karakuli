@@ -17,16 +17,15 @@ const config = {
 
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
-    // '^.+\\.svg$': 'jest-svg-transformer',
   },
 
   testEnvironment: 'jsdom',
 
   setupFilesAfterEnv: ['./jest.setup.js'],
 
-  // This did not work
-  // transformIgnorePatterns: ['node_modules/(?!@ijl)']
-  // What is System.get()?
+  moduleNameMapper: {
+    '\\.(css|less|svg)$': '<rootDir>/__mocks__/fileMock.js',
+  },
 }
 
 module.exports = config
