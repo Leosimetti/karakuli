@@ -24,7 +24,7 @@ const config = {
   setupFilesAfterEnv: ['./jest.setup.js'],
 
   moduleNameMapper: {
-    '\\.(css|less|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|less|svg|png)$': '<rootDir>/__mocks__/fileMock.js',
   },
 }
 
