@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 14.x
           cache: 'npm'
-      - run: npm install yarn
+      - run: npm i --global yarn
       - run: yarn
       - run: yarn jest
       - name: SonarCloud Scan
