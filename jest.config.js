@@ -11,7 +11,7 @@ const config = {
   coverageDirectory: '<rootDir>/reports/coverage',
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: [['html', { subdir: 'html' }]],
+  coverageReporters: [['html', { subdir: 'html' }], 'lcov'],
 
   testMatch: ['**/(__tests__|tests)/**/?(*.)(spec|test).ts?(x)'],
 

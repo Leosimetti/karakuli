@@ -1,5 +1,6 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { reducer as userdataReducer } from '../Data/Slices/userdata'
+
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 const getTestStore = () =>
   configureStore({

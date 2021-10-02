@@ -2,10 +2,12 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
-import { describe, expect, it } from '@jest/globals'
 import getTestStore from '../../__tests__/testStore'
 import { Dashboard } from '../Dashboard/Dashboard'
 
+// eslint-disable-next-line import/no-extraneous-dependencies,node/no-extraneous-import
+import { describe, expect, it } from '@jest/globals'
+// eslint-disable-next-line node/no-unpublished-import
 import { render } from '@testing-library/react'
 
 describe('Auth Page', () => {

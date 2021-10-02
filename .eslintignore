@@ -5,3 +5,6 @@ node_modules
 .eslintrc.js
 builder
 eslintrc.js
+**/coverage
+jest.setup.js
+__mocks__

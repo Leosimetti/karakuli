@@ -244,6 +244,7 @@ exports[`Auth Page renders 1`] = `
   border-radius: 10px;
   text-align: center;
   font-size: 35px;
+  margin: 30px 0 0 0;
   padding: 15px 7px;
 }
 

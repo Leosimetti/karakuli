@@ -69,6 +69,7 @@ module.exports = {
     // Remove error when working with redux state in slice
     'no-param-reassign': 'off',
     // Remove incompatible behavior with indent
+    '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/indent': 'off',
     // Remove due to possibility of handled auto-assigned undefined props
     'react/require-default-props': 'off',
