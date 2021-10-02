@@ -29,7 +29,6 @@ tmp
 # Yarn 2 build artifacts
 # https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
 .yarn/*
-!.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
@@ -40,3 +39,4 @@ Thumbs.db
 
 # Extra files for reference
 src/stories/examples
+.yarnrc.yml
