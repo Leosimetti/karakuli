@@ -1,0 +1,393 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth Page renders 1`] = `
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #8368ee;
+  box-sizing: border-box;
+  border-radius: 40px;
+  border: 5px solid #8368ee;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c10 div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.c10 div:first-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #5238bc;
+  border-radius: 40px 0 0 40px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #4FCFB7;
+  box-sizing: border-box;
+  border-radius: 40px;
+  border: 5px solid #4FCFB7;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c14 div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.c14 div:first-child {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #218875;
+  border-radius: 40px 0 0 40px;
+}
+
+.c12 {
+  font-family: Roboto,serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.c12 span {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 20px;
+  color: #ffffff;
+  text-shadow: -1px 0 black,0 1px black,1px 0 black,0 -1px black;
+}
+
+.c12 span:focus,
+.c12 span:hover,
+.c12 span:visited,
+.c12 span:link,
+.c12 span:active {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  border-radius: 40px;
+  margin: 20px;
+  color: #303030;
+}
+
+.c4 {
+  font-family: Roboto,serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 55px;
+  white-space: nowrap;
+  line-height: 55px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #f18c9c;
+  text-shadow: 1px 1px 2px red,0 0 1em #f18c9c,0 0 0.2em #f18c9c;
+}
+
+.c6 {
+  font-size: 40px;
+  line-height: normal;
+  padding-right: 20px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+}
+
+.c2 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.c5 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.c0 {
+  height: 100%;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: #303030;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 30%;
+}
+
+.c11 {
+  margin: 40px;
+}
+
+.c8 {
+  background-color: rgb(135,203,252,0.69);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 35px;
+  padding: 15px 7px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media (max-width:800px) {
+  .c5 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width:800px) {
+  .c3 {
+    display: none;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <header
+        class="c2"
+      >
+        <a
+          href="/dashboard"
+        >
+          <div
+            class="c3"
+          >
+            <span
+              class="c4"
+            >
+              カラクリ
+            </span>
+          </div>
+        </a>
+        <div
+          class="c5"
+        >
+          <a
+            href="/study-lists"
+          >
+            Каталог
+          </a>
+          <a
+            href="/review"
+          >
+            Практика
+          </a>
+          <a
+            href="/lessons"
+          >
+            Уроки
+          </a>
+          <div
+            class="c6"
+          >
+            Aboba Bebrin
+          </div>
+        </div>
+      </header>
+      <div
+        class="c7"
+      >
+        <div
+          class="c8"
+        >
+          Your current study list is
+           
+          <a
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          />
+          . You can change it 
+          <a
+            href="/study-lists"
+          >
+            here
+          </a>
+        </div>
+      </div>
+      <div
+        class="c9"
+      >
+        <div
+          class="c10 c11"
+        >
+          <div
+            class="c12"
+          >
+            <span>
+              Приступить к урокам
+            </span>
+          </div>
+          <div
+            class="c13"
+          >
+            <span>
+              Доступно
+            </span>
+            <span>
+              <b>
+                0
+              </b>
+            </span>
+          </div>
+        </div>
+        <div
+          class="c14 c11"
+        >
+          <div
+            class="c12"
+          >
+            <span>
+              Приступить к практике
+            </span>
+          </div>
+          <div
+            class="c13"
+          >
+            <span>
+              Доступно
+            </span>
+            <span>
+              <b>
+                0
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
