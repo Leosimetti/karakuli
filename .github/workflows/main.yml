@@ -8,7 +8,7 @@ on:
 jobs:
   sonarcloud:
     name: SonarCloud
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -18,8 +18,9 @@ jobs:
         with:
           node-version: 14.x
           cache: 'npm'
-      - run: npm install
-      - run: npx jest
+      - run: npm install yarn
+      - run: yarn
+      - run: yarn jest
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
