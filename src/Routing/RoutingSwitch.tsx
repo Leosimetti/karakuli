@@ -5,6 +5,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import { selectors } from '../Data/Slices/userdata'
 import { AuthPage } from '../Pages/Auth/AuthPage'
 import { Dashboard } from '../Pages/Dashboard/Dashboard'
+import LessonsPage from '../Pages/Lessons/LessonsPage'
 import ReviewPage from '../Pages/Review/ReviewPage'
 import { StudyLists } from '../Pages/StudyLists/StudyLists'
 
@@ -32,6 +33,9 @@ export const RoutingSwitch = () => {
           </Route>
           <Route exact path={URLs.review}>
             <ReviewPage />
+          </Route>
+          <Route exact path={URLs.lessons}>
+            <LessonsPage />
           </Route>
           <Route exact path={URLs.studyLists}>
             <StudyLists />

@@ -53,8 +53,26 @@ module.exports = {
     'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
     // Allow TS infer types without explicitly specifying them
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    semi: 'off',
+    '@typescript-eslint/no-unused-expressions': 'off',
+    // Simple import sort is already used
+    'import/order': 'off',
+    // Turn off semicolons in unnecessary places
     '@typescript-eslint/semi': 'off',
+    semi: 'off',
+    // Remove handler that brings problems with text in JSX
+    'react/jsx-one-expression-per-line': 'off',
+    // Unnecessary linebreaks
+    'object-curly-newline': 'off',
+    'react/jsx-curly-newline': 'off',
+    'no-confusing-arrow': 'off',
+    'operator-linebreak': 'off',
+    // Remove error when working with redux state in slice
+    'no-param-reassign': 'off',
+    // Remove incompatible behavior with indent
+    '@typescript-eslint/indent': 'off',
+    // Remove due to possibility of handled auto-assigned undefined props
+    'react/require-default-props': 'off',
+    'implicit-arrow-linebreak': 'off',
     // Prevents self import of foo.js from foo.js
     'import/no-self-import': 'error',
     'import/no-useless-path-segments': ['error', { noUselessIndex: true }],

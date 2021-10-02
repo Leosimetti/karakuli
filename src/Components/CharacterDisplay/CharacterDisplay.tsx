@@ -43,12 +43,20 @@ const QuestionType = styled.div<{ q_type: string }>`
 
 type CharacterDisplayProps = {
   className?: string
-  review: any
+  review: {
+    id: number
+    character: string
+    reading: string
+    meaning: string
+    example: string
+    type: string
+  }
 }
 
 const CharacterDisplay = ({ className, review }: CharacterDisplayProps) => {
+  let display
   if (!review) {
-    review = {
+    display = {
       id: -1,
       character: '🍆',
       reading: '',
@@ -56,12 +64,14 @@ const CharacterDisplay = ({ className, review }: CharacterDisplayProps) => {
       example: '',
       type: 'none',
     }
+  } else {
+    display = review
   }
 
   return (
-    <Display className={className}>
-      <QuestionType q_type={review.type}>{review.type}</QuestionType>
-      <Char>{review.character}</Char>
+    <Display className={className} data-testid="">
+      <QuestionType q_type={display.type}>{display.type}</QuestionType>
+      <Char>{display.character}</Char>
     </Display>
   )
 }

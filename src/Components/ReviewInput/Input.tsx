@@ -1,7 +1,7 @@
-import React from 'react';
-import WanakanaInput_ from 'react-wanakana';
+import React from 'react'
+import WanakanaInput_ from 'react-wanakana'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // const colors = {
 //   correct: '#3FDB4F',
@@ -11,10 +11,10 @@ import styled from 'styled-components';
 const InputWrapper = styled.div`
   //width: 900px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-`;
+`
 
 const WanakanaInput = styled(WanakanaInput_)`
-  width: 800px;
+  width: 100%;
   height: 65px;
   box-sizing: border-box;
   background-color: #606060;
@@ -40,30 +40,28 @@ const WanakanaInput = styled(WanakanaInput_)`
   @media (max-width: 768px) {
     width: 300px;
   }
-`;
+`
 // background-color: ${(p) => colors[p.status] || p.theme.educational.background};
 // color: ${(p) => p.theme.educational.color};
 
-const Input = ({
-  className, callback, status, testId, ...rest
-}) => {
-  const _handleKeyDown = (e) => {
+const Input = ({ className, callback, status, testId, ...rest }) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
-      callback(e.target.value);
+      callback(e.target.value)
     }
-  };
+  }
 
   const input = (
     <WanakanaInput
       data-testid={testId}
       placeholder="Введите ответ"
-      onKeyDown={_handleKeyDown}
+      onKeyDown={handleKeyDown}
       status={status}
       {...rest}
     />
-  );
+  )
 
-  return <InputWrapper className={className}>{input}</InputWrapper>;
-};
+  return <InputWrapper className={className}>{input}</InputWrapper>
+}
 
-export default Input;
+export default Input

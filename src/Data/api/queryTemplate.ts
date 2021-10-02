@@ -1,4 +1,4 @@
-type queryProps = {
+type QueryProps = {
   URL: string
   method: 'POST' | 'GET' | 'PUT' | 'DELETE'
   body?: BodyInit
@@ -6,7 +6,7 @@ type queryProps = {
   contentType?: string
   logging?: boolean
   onFail?: (errorMessage: string) => void
-};
+}
 
 export async function query({
   URL,
@@ -16,31 +16,31 @@ export async function query({
   contentType,
   logging,
   onFail,
-}: queryProps) {
-  const requestHeaders = new Headers();
+}: QueryProps) {
+  const requestHeaders = new Headers()
 
-  if (accessToken) requestHeaders.append('Authorization', `Bearer ${accessToken}`);
+  if (accessToken) requestHeaders.append('Authorization', `Bearer ${accessToken}`)
 
-  if (contentType) requestHeaders.append('Content-Type', contentType);
+  if (contentType) requestHeaders.append('Content-Type', contentType)
 
   const response = await fetch(URL, {
     method,
     mode: 'cors',
     body,
     headers: requestHeaders,
-  });
-  const responseJSON = await response.json();
+  })
+  const responseJSON = await response.json()
 
   if (logging) {
     // eslint-disable-next-line no-console
-    console.log(`%cRequest on URL: ${URL} return value:`, 'font:2rem; color:blue');
+    console.log(`%cRequest on URL: ${URL} return value:`, 'font:2rem; color:blue')
     // eslint-disable-next-line no-console
-    console.log(responseJSON);
+    console.log(responseJSON)
   }
 
   if (onFail && responseJSON.detail) {
-    onFail(responseJSON.detail);
+    onFail(responseJSON.detail)
   }
 
-  return responseJSON;
+  return responseJSON
 }

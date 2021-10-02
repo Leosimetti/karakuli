@@ -6,6 +6,6 @@ const store = configureStore({
   reducer: combineReducers({
     userdata: userdataReducer,
   }),
-});
+})
 
-export default store;
+export default store

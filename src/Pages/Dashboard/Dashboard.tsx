@@ -52,6 +52,7 @@ const Blur = styled.div`
   font-size: 35px;
 
   //margin: 1% 0;
+  margin: 30px 0 0 0;
   padding: 15px 7px;
 `
 

@@ -6,7 +6,7 @@ import { NavBar } from '../../Components/NavBar/NavBar'
 import Input_ from '../../Components/ReviewInput'
 import { selectors } from '../../Data/Slices/userdata'
 
-import { getReviews } from './Review.utils'
+import { getLessons } from './Lessons.utils'
 
 import styled from 'styled-components'
 
@@ -66,23 +66,23 @@ const Message = styled.div`
   color: green;
 `
 
-export default function ReviewPage() {
+export default function LessonsPage() {
   const userToken = useSelector(selectors.accessToken)
 
-  const [reviews, setReviews] = useState([])
+  const [lessons, setLessons] = useState([])
   const [position, setPosition] = useState(0)
 
   useEffect(() => {
     userToken &&
-      getReviews(userToken).then((data) => {
-        setReviews(data)
+      getLessons(userToken, 5).then((data) => {
+        setLessons(data)
       })
-  }, [getReviews])
+  }, [getLessons])
 
   return (
     <Wrapper>
       <NavBar />
-      {reviews.length > 0 ? (
+      {lessons.length > 0 ? (
         <Grid>
           {position > 0 && (
             <ArrowLeft onClick={() => setPosition(position > 0 ? position - 1 : position)}>
@@ -90,12 +90,12 @@ export default function ReviewPage() {
             </ArrowLeft>
           )}
           <Main>
-            <CharacterDisplay review={reviews[position]} />
+            <CharacterDisplay review={lessons[position]} />
             <Input callback={alert} status={null} maxLength={20} />
           </Main>
-          {position < reviews.length - 1 && (
+          {position < lessons.length - 1 && (
             <ArrowRight
-              onClick={() => setPosition(position < reviews.length - 1 ? position + 1 : position)}
+              onClick={() => setPosition(position < lessons.length - 1 ? position + 1 : position)}
             >
               ➤
             </ArrowRight>
@@ -103,7 +103,7 @@ export default function ReviewPage() {
         </Grid>
       ) : (
         <Flex>
-          <Message>NO MORE REVIEWS LEFT!</Message>
+          <Message>NO MORE LESSONS LEFT!</Message>
         </Flex>
       )}
     </Wrapper>
