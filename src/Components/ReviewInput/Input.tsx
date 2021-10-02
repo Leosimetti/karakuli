@@ -1,5 +1,9 @@
 import React from 'react'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import WanakanaInput_ from 'react-wanakana'
+
+import { Review } from '../CharacterDisplay/CharacterDisplay'
 
 import styled from 'styled-components'
 
@@ -41,11 +45,23 @@ const WanakanaInput = styled(WanakanaInput_)`
     width: 300px;
   }
 `
-// background-color: ${(p) => colors[p.status] || p.theme.educational.background};
-// color: ${(p) => p.theme.educational.color};
+type InputProps = {
+  className?: string
+  callback: (value: unknown) => void
+  review: Review
+  value: string
+  status?: string
+  testId?: string
+  maxLength?: number
+}
 
-const Input = ({ className, callback, status, testId, ...rest }) => {
-  const handleKeyDown = (e) => {
+type KeyboardElementEvent = {
+  key: string
+  target: { value: unknown }
+}
+
+const Input = ({ className, callback, status, testId, review, value, ...rest }: InputProps) => {
+  const handleKeyDown = (e: KeyboardElementEvent) => {
     if (e.key === 'Enter') {
       callback(e.target.value)
     }
@@ -53,7 +69,9 @@ const Input = ({ className, callback, status, testId, ...rest }) => {
 
   const input = (
     <WanakanaInput
+      to={review.type !== 'reading' ? 'romaji' : ''}
       data-testid={testId}
+      value={value}
       placeholder="Введите ответ"
       onKeyDown={handleKeyDown}
       status={status}

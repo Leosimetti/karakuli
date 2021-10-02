@@ -41,17 +41,32 @@ const QuestionType = styled.div<{ q_type: string }>`
   line-height: 28px;
 `
 
+export type Review = {
+  id: number
+  character: string
+  reading: string
+  meaning: string
+  example: string
+  type: string
+}
+
 type CharacterDisplayProps = {
   className?: string
-  review: {
-    id: number
-    character: string
-    reading: string
-    meaning: string
-    example: string
-    type: string
-  }
+  review: Review
 }
+
+const Reading = styled.div`
+  grid-row-start: 1;
+
+  text-align: center;
+  height: 30px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+  margin-top: 5px;
+`
 
 const CharacterDisplay = ({ className, review }: CharacterDisplayProps) => {
   let display
@@ -72,6 +87,7 @@ const CharacterDisplay = ({ className, review }: CharacterDisplayProps) => {
     <Display className={className} data-testid="">
       <QuestionType q_type={display.type}>{display.type}</QuestionType>
       <Char>{display.character}</Char>
+      <Reading>{display.type !== 'reading' ? display.reading : ''}</Reading>
     </Display>
   )
 }

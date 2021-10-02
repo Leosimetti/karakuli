@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import CharacterDisplay_ from '../../Components/CharacterDisplay'
+import ItemInfo from '../../Components/ItemInfo'
 import { NavBar } from '../../Components/NavBar/NavBar'
-import Input_ from '../../Components/ReviewInput'
 import { selectors } from '../../Data/Slices/userdata'
 
 import { getLessons } from './Lessons.utils'
@@ -15,12 +15,9 @@ const CharacterDisplay = styled(CharacterDisplay_)`
   margin: 15px auto auto;
 `
 
-const Input = styled(Input_)`
-  background-color: #606060;
-  margin: 15px auto auto;
-`
 const Wrapper = styled.div`
   height: 100%;
+  min-height: 800px;
   background-color: #303030;
   //min-width: 768px;
 `
@@ -48,7 +45,7 @@ const ArrowLeft = styled(ArrowRight)`
 const Grid = styled.div`
   display: grid;
   grid-template-areas: 'left mid  right';
-  grid-template-columns: 1fr 1.8fr 1fr;
+  grid-template-columns: 1fr 2.4fr 1fr;
 `
 
 const Main = styled.div`
@@ -70,12 +67,14 @@ export default function LessonsPage() {
   const userToken = useSelector(selectors.accessToken)
 
   const [lessons, setLessons] = useState([])
+  const [message, setMessage] = useState('')
   const [position, setPosition] = useState(0)
 
   useEffect(() => {
     userToken &&
       getLessons(userToken, 5).then((data) => {
         setLessons(data)
+        setMessage('No more lessons left')
       })
   }, [getLessons])
 
@@ -91,7 +90,7 @@ export default function LessonsPage() {
           )}
           <Main>
             <CharacterDisplay review={lessons[position]} />
-            <Input callback={alert} status={null} maxLength={20} />
+            <ItemInfo testId="study:info" word={lessons[position]} />
           </Main>
           {position < lessons.length - 1 && (
             <ArrowRight
@@ -103,7 +102,7 @@ export default function LessonsPage() {
         </Grid>
       ) : (
         <Flex>
-          <Message>NO MORE LESSONS LEFT!</Message>
+          <Message>{message}</Message>
         </Flex>
       )}
     </Wrapper>

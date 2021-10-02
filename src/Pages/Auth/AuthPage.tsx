@@ -7,7 +7,7 @@ import { AuthNavButton } from '../../Components/Button/AuthNavButton'
 import { FeatureCarousel } from '../../Components/Caroussel/Carousel'
 import { AuthTextInput } from '../../Components/Input/AuthInput'
 import { Logo } from '../../Components/Logo/Logo'
-import { registerData, submitHandle } from '../../Data/api/actioncreators/register'
+import { RegisterData, submitHandle } from '../../Data/api/actioncreators/register'
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -132,7 +132,7 @@ const Blur = styled.div<{ align: string }>`
   border-radius: 10px;
   text-align: ${(props) => props.align};
 
-  //margin: 1% 0;
+  margin: 10px;
   padding: 15px 7px;
 `
 
@@ -164,7 +164,7 @@ export const AuthPage = () => {
   })
   const dispatch = useDispatch()
 
-  async function onSubmit(data: registerData) {
+  async function onSubmit(data: RegisterData) {
     // console.log(data)
     dispatch(submitHandle(data, currentForm))
   }
@@ -242,7 +242,7 @@ export const AuthPage = () => {
                     // typescript error with documented utilization of library
                     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                     //  @ts-ignore
-                    (input === methods.watch('password') ? true : 'Пароли должны совпадать')
+                    input === methods.watch('password') ? true : 'Пароли должны совпадать'
                   }
                 />
               )}

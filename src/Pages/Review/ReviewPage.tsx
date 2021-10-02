@@ -48,7 +48,7 @@ const ArrowLeft = styled(ArrowRight)`
 const Grid = styled.div`
   display: grid;
   grid-template-areas: 'left mid  right';
-  grid-template-columns: 1fr 1.8fr 1fr;
+  grid-template-columns: 1fr 2.4fr 1fr;
 `
 
 const Main = styled.div`
@@ -70,14 +70,21 @@ export default function ReviewPage() {
   const userToken = useSelector(selectors.accessToken)
 
   const [reviews, setReviews] = useState([])
+  const [message, setMessage] = useState('')
+  const [input, setInput] = useState('')
   const [position, setPosition] = useState(0)
 
   useEffect(() => {
     userToken &&
       getReviews(userToken).then((data) => {
         setReviews(data)
+        setMessage('No more reviews')
       })
   }, [getReviews])
+
+  useEffect(() => {
+    setInput('')
+  }, [position])
 
   return (
     <Wrapper>
@@ -91,7 +98,7 @@ export default function ReviewPage() {
           )}
           <Main>
             <CharacterDisplay review={reviews[position]} />
-            <Input callback={alert} status={null} maxLength={20} />
+            <Input callback={alert} maxLength={20} review={reviews[position]} value={input} />
           </Main>
           {position < reviews.length - 1 && (
             <ArrowRight
@@ -103,7 +110,7 @@ export default function ReviewPage() {
         </Grid>
       ) : (
         <Flex>
-          <Message>NO MORE REVIEWS LEFT!</Message>
+          <Message>{message}</Message>
         </Flex>
       )}
     </Wrapper>
