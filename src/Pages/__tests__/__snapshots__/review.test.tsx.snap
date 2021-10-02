@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth Page renders 1`] = `
+.c9 {
+  height: 300px;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+.c12 {
+  grid-row-start: 2;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 230px;
+  line-height: 230px;
+}
+
+.c11 {
+  grid-row-start: 3;
+  color: darkgrey;
+  text-align: center;
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.c3 {
+  font-family: Roboto,serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 55px;
+  white-space: nowrap;
+  line-height: 55px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #f18c9c;
+  text-shadow: 1px 1px 2px red,0 0 1em #f18c9c,0 0 0.2em #f18c9c;
+}
+
+.c5 {
+  font-size: 40px;
+  line-height: normal;
+  padding-right: 20px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.c13 {
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+.c15 {
+  width: 800px;
+  height: 65px;
+  box-sizing: border-box;
+  background-color: #606060;
+  color: #cdcdcd;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-family: Roboto,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 25px;
+}
+
+.c15::-webkit-input-placeholder {
+  color: #9b9b9b;
+}
+
+.c15::-moz-placeholder {
+  color: #9b9b9b;
+}
+
+.c15:-ms-input-placeholder {
+  color: #9b9b9b;
+}
+
+.c15::placeholder {
+  color: #9b9b9b;
+}
+
+.c10 {
+  background-color: #606060;
+  margin: 15px auto auto;
+}
+
+.c14 {
+  background-color: #606060;
+  margin: 15px auto auto;
+}
+
+.c0 {
+  height: 100%;
+  background-color: #303030;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #f18c9c;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-size: 50px;
+  margin: 50px;
+}
+
+.c8 {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media (max-width:800px) {
+  .c4 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width:800px) {
+  .c2 {
+    display: none;
+  }
+}
+
+@media (max-width:1200px) {
+  .c15 {
+    width: 600px;
+  }
+}
+
+@media (max-width:768px) {
+  .c15 {
+    width: 300px;
+  }
+}
+
+@media (max-width:800px) {
+  .c7 {
+    margin: 35px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <a
+        href="/dashboard"
+      >
+        <div
+          class="c2"
+        >
+          <span
+            class="c3"
+          >
+            カラクリ
+          </span>
+        </div>
+      </a>
+      <div
+        class="c4"
+      >
+        <a
+          href="/study-lists"
+        >
+          Каталог
+        </a>
+        <a
+          href="/review"
+        >
+          Практика
+        </a>
+        <a
+          href="/lessons"
+        >
+          Уроки
+        </a>
+        <div
+          class="c5"
+        >
+          Aboba Bebrin
+        </div>
+      </div>
+    </header>
+    <div
+      class="c6"
+    >
+      <span
+        class="c7 c8"
+      >
+        ➤
+      </span>
+      <div>
+        <div
+          class="c9 c10"
+        >
+          <div
+            class="c11"
+          >
+            none
+          </div>
+          <div
+            class="c12"
+          >
+            🍆
+          </div>
+        </div>
+        <div
+          class="c13 c14"
+        >
+          <input
+            class="c15"
+            maxlength="20"
+            placeholder="Введите ответ"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <span
+        class="c7"
+      >
+        ➤
+      </span>
+    </div>
+  </div>
+</div>
+`;

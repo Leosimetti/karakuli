@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth Page renders 1`] = `
+.c3 {
+  font-family: Roboto,serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 55px;
+  white-space: nowrap;
+  line-height: 55px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #f18c9c;
+  text-shadow: 1px 1px 2px red,0 0 1em #f18c9c,0 0 0.2em #f18c9c;
+}
+
+.c5 {
+  font-size: 40px;
+  line-height: normal;
+  padding-right: 20px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+}
+
+.c1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.c4 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: black;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: #303030;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@media (max-width:800px) {
+  .c4 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width:800px) {
+  .c2 {
+    display: none;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <a
+        href="/dashboard"
+      >
+        <div
+          class="c2"
+        >
+          <span
+            class="c3"
+          >
+            カラクリ
+          </span>
+        </div>
+      </a>
+      <div
+        class="c4"
+      >
+        <a
+          href="/study-lists"
+        >
+          Каталог
+        </a>
+        <a
+          href="/review"
+        >
+          Практика
+        </a>
+        <a
+          href="/lessons"
+        >
+          Уроки
+        </a>
+        <div
+          class="c5"
+        >
+          Aboba Bebrin
+        </div>
+      </div>
+    </header>
+    <div
+      class="c6"
+    />
+  </div>
+</div>
+`;
