@@ -42,7 +42,7 @@ const QuestionType = styled.div<{ q_type: string }>`
 `
 
 export type Review = {
-  id: number
+  lesson_id: number
   character: string
   reading: string
   meaning: string

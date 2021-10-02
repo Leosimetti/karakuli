@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import CharacterDisplay_ from '../../Components/CharacterDisplay'
+import { Review } from '../../Components/CharacterDisplay/CharacterDisplay'
 import { NavBar } from '../../Components/NavBar/NavBar'
 import Input_ from '../../Components/ReviewInput'
 import { selectors } from '../../Data/Slices/userdata'
 
-import { getReviews } from './Review.utils'
+import { doReview, getReviews } from './Review.utils'
 
 import styled from 'styled-components'
 
@@ -66,13 +67,26 @@ const Message = styled.div`
   color: green;
 `
 
+function getInputElement() {
+  return document.getElementById('wanakana_input')
+}
+
 export default function ReviewPage() {
   const userToken = useSelector(selectors.accessToken)
 
   const [reviews, setReviews] = useState([])
   const [message, setMessage] = useState('')
-  const [input, setInput] = useState('')
   const [position, setPosition] = useState(0)
+
+  const clearInput = () => {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        if (getInputElement()) getInputElement().value = ''
+      })
+    })
+  }
 
   useEffect(() => {
     userToken &&
@@ -82,9 +96,17 @@ export default function ReviewPage() {
       })
   }, [getReviews])
 
-  useEffect(() => {
-    setInput('')
-  }, [position])
+  const reviewItem = (review_id: number, type: string) => {
+    doReview(userToken, review_id, type).then(() => {})
+    if (position === reviews.length - 1) {
+      setPosition(position - 1)
+    }
+
+    setReviews(
+      reviews.filter((review: Review) => review.lesson_id !== review_id || review.type !== type)
+    )
+    clearInput()
+  }
 
   return (
     <Wrapper>
@@ -92,17 +114,25 @@ export default function ReviewPage() {
       {reviews.length > 0 ? (
         <Grid>
           {position > 0 && (
-            <ArrowLeft onClick={() => setPosition(position > 0 ? position - 1 : position)}>
+            <ArrowLeft
+              onClick={() => {
+                setPosition(position > 0 ? position - 1 : position)
+                clearInput()
+              }}
+            >
               ➤
             </ArrowLeft>
           )}
           <Main>
             <CharacterDisplay review={reviews[position]} />
-            <Input callback={alert} maxLength={20} review={reviews[position]} value={input} />
+            <Input callback={reviewItem} maxLength={20} review={reviews[position]} />
           </Main>
           {position < reviews.length - 1 && (
             <ArrowRight
-              onClick={() => setPosition(position < reviews.length - 1 ? position + 1 : position)}
+              onClick={() => {
+                setPosition(position < reviews.length - 1 ? position + 1 : position)
+                clearInput()
+              }}
             >
               ➤
             </ArrowRight>

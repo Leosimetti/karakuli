@@ -76,6 +76,7 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     // Prevents self import of foo.js from foo.js
     'import/no-self-import': 'error',
+    'no-alert': 'off',
     'import/no-useless-path-segments': ['error', { noUselessIndex: true }],
     'import/prefer-default-export': 'off',
     // Allows not to destruct your props
