@@ -105,9 +105,10 @@ type ItemInfoProps = {
     example: string
     lesson_id: number
   }
+  callback: (lesson_id: number) => void
   testId: string
 }
-const ItemInfo = ({ className, word, testId }: ItemInfoProps) => {
+const ItemInfo = ({ className, word, testId, callback }: ItemInfoProps) => {
   const userToken = useSelector(selectors.accessToken)
   if (!word) {
     word = {
@@ -131,13 +132,14 @@ const ItemInfo = ({ className, word, testId }: ItemInfoProps) => {
       <Separator />
       <Button
         type="button"
-        onClick={() =>
+        onClick={() => {
           query({
             URL: `${API_URLS.reviews}?lesson_id=${word.lesson_id}`,
             method: 'POST',
             accessToken: userToken,
-          })
-        }
+          }).then(() => {})
+          callback(word.lesson_id)
+        }}
       >
         Добавить в практику
       </Button>

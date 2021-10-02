@@ -97,7 +97,7 @@ export default function ReviewPage() {
   }, [getReviews])
 
   const reviewItem = (review_id: number, type: string) => {
-    doReview(userToken, review_id, type).then(() => {})
+    userToken && doReview(userToken, review_id, type).then(() => {})
     if (position === reviews.length - 1) {
       setPosition(position - 1)
     }

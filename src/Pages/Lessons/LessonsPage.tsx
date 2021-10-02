@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import CharacterDisplay_ from '../../Components/CharacterDisplay'
+import { Review } from '../../Components/CharacterDisplay/CharacterDisplay'
 import ItemInfo from '../../Components/ItemInfo'
 import { NavBar } from '../../Components/NavBar/NavBar'
 import { selectors } from '../../Data/Slices/userdata'
@@ -78,6 +79,13 @@ export default function LessonsPage() {
       })
   }, [getLessons])
 
+  const updateList = (lesson_id: number) => {
+    if (position === lessons.length - 1) {
+      setPosition(position - 1)
+    }
+    setLessons(lessons.filter((lesson: Review) => lesson.lesson_id !== lesson_id))
+  }
+
   return (
     <Wrapper>
       <NavBar />
@@ -90,7 +98,7 @@ export default function LessonsPage() {
           )}
           <Main>
             <CharacterDisplay review={lessons[position]} />
-            <ItemInfo testId="study:info" word={lessons[position]} />
+            <ItemInfo callback={updateList} testId="study:info" word={lessons[position]} />
           </Main>
           {position < lessons.length - 1 && (
             <ArrowRight

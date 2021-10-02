@@ -58,7 +58,6 @@ export const StudyLists = () => {
               title={name}
               pictureLink={img_url}
               description={description}
-              id={id}
               onClick={() => {
                 userToken && dispatch(chooseList(id, userToken, () => history.push(URLs.dashboard)))
               }}
